@@ -1,0 +1,23 @@
+<html>
+ <head>
+	<title>Loading Json with Jquery</title>
+	<script type="text/javascript" src="./jquery.min.js"></script>
+	<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jqurey.min.js"></script>-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#liuting").click(function(){
+			$("#response").load("ajax_php.php?type=liuting");
+			});
+			$("#lizhiguo").click(function(){
+			$("#response").load("ajax_php.php?type=lizhiguo");
+			});
+		});
+	</script>
+ </head>
+ <body>
+	<button id="liuting">liuting</button>
+	<button id="lizhiguo">lizhiguo</button>
+	<p>Ajax reponse from php</p>
+	<div id="response">&nbsp;</div>
+ </body>
+</html>

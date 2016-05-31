@@ -1,0 +1,49 @@
+<html>
+ <head>
+	<title>Loading Json with Jquery</title>
+	<script type="text/javascript" src="./jquery.min.js"></script>
+	<!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jqurey.min.js"></script>-->
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$.getJSON("json_example.php",function(data){
+				$.each(data,function(continent,liuting){
+				console.log(continent);
+				var message ="<strong>"+continent+":"+"</strong><br/>";
+				console.log(liuting);
+				for(j=0;j<liuting.length;j++){
+				
+				message +=liuting[j]+",";
+				//console.log(message);
+				
+				}
+				//message=message.trim();
+				//message=message.substring(0,message.length-1);
+				$("#generated_content").append("<p>"+message+"</p>");
+				});
+			});
+		});
+	</script>
+ </head>
+ <body>
+	<p><strong>Ajax parsed Json:</strong></p>
+	<div id="generated_content">&nbsp;</div>
+ </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
